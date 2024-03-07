@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: #f5f0ff;
+  --primary: #caaefd;
+  --secondary: #3a1d6e;
+  --incorrect: #dc3545;
+  --correct: #198754;
+}
+
+hmtl {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url(https://wallpapercave.com/wp/wp1864396.jpg);
+  background-size: cover;
+  background-position: center center;
+  color: var(--secondary);
+  height: 100vh;
+  padding: 1rem;
+  position: relative;
+  width: 100vw;
+}
+
+button {
+  background: transparent;
+  border: 1.35px solid var(--secondary);
+  border-radius: 0.3em;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  padding: 1rem;
+  text-transform: capitalize;
+  transition: all ease-in 0.1s;
+}
+
+/* UTILITY STYLES */
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.jcc {
+  justify-content: center;
+}
+
+.correct {
+  background-color: var(--correct);
+  border: 1px solid var(--correct);
+  color: var(--white);
+}
+.incorrect {
+  background-color: var(--incorrect);
+  border: 1px solid var(--incorrect);
+  color: var(--white);
+}
+
+.overlay {
+  background: #00000069;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+/* QUIZ */
+.quiz-wrap {
+  background-color: var(--white);
+  border-radius: 0.3em;
+  box-shadow: 0 0px 2px 0px var(--black);
+  color: inherit;
+  max-width: 720px;
+  padding: 2rem;
+  width: 100%;
+}
+
+.quiz-top,
+.quiz-bottom {
+  width: 100%;
+}
+
+.quiz-top {
+  font-size: 4vw;
+  margin-bottom: 1rem;
+}
+
+.quiz-bottom {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.question {
+  font-size: 6.5vw;
+}
+
+.answers {
+  flex-direction: column;
+  gap: 0.5rem;
+  text-transform: capitalize;
+}
+
+.option-btn {
+  font-size: 3.5vw;
+  text-align: left;
+}
+.option-btn:hover:not([disabled]) {
+  background: var(--primary);
+  border: 1.35px solid var(--primary);
+  color: var(--white);
+  transition: ease-in 0.1s;
+}
+.option-btn:disabled {
+  cursor: no-drop;
+}
+
+#next-btn {
+  background: var(--secondary);
+  color: var(--white);
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 457px) {
+  .quiz-top {
+    font-size: 1.25vw;
+  }
+  .question {
+    font-size: 2.5vw;
+  }
+  .option-btn {
+    font-size: 1vw;
+  }
+}
